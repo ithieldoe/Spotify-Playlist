@@ -15,18 +15,6 @@ sp = spotipy.oauth2.SpotifyOAuth(
     cache_path='token.txt'
 )
 
-
-# sp = spotipy.Spotify(
-#     auth_manager=SpotifyOAuth(
-#         scope="playlist-modify-private",
-#         redirect_uri="http://example.com",
-#         client_id=client_id,
-#         client_secret=client_secret,
-#         show_dialog=True,
-#         cache_path="token.txt"
-#     )
-# )
-
 sp.get_access_token(as_dict=True)
 token = open('token.txt', 'r')
 cached_token = (eval(token.read())['access_token'])
